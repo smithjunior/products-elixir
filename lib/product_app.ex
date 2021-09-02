@@ -19,7 +19,7 @@ defmodule ProductApp do
   """
   def hello do
     create_product_list()
-    |> sort_products
+    |> sort_products_by_value
   end
 
   defp create_product_list do
@@ -30,7 +30,7 @@ defmodule ProductApp do
     ]
   end
 
-  defp sort_products(product_list) do
+  defp sort_products_by_value(product_list) do
     Enum.sort(product_list, &(&1.value < &2.value ))
   end
 end
